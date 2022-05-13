@@ -10,7 +10,9 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 	instruction_t funcion;
 
 	instruction_t selector[] = {
-		{"push", add_node}, {"pall", print_list}, {NULL, NULL}
+		{"push", add_node}, 
+		{"pall", print_list}, 
+		{NULL, NULL}
 	};
 	for (i = 0; i < 2; i++)
 	{
@@ -21,7 +23,6 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 		}
 	}
 	return (NULL);
-
 }
 /**
  * tokenizador - tokenizador
@@ -29,36 +30,44 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
  * @buffer: line
  * @line: number of line
  */
-void tokenizador(stack_t **head, char *buffer, unsigned int line)
+int tokenizador(stack_t **head, char *buffer, unsigned int line)
 {
 	char *comand = NULL;
 	char *number = NULL;
+	int num = 0;
 	instruction_t funcion;
 
 	comand = strtok(buffer, "\n\t ");
 	number = strtok(NULL, "\n\t ");
-	if (comand != NULL)
-		funcion.f = check_function(comand);
+	if (comand == NULL)
+		return(0);
+	funcion.f = check_function(comand);
 	if (funcion.f)
-		execute(funcion, head, number, line);
+	{
+		num = execute(funcion, head, number, line);
+		if (num == -1)
+			return(-1);
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, comand);
-		exit(EXIT_FAILURE);
+		return(-1);
 	}
+	return(0);
 }
 /**
  * main - monty
  * @argc: argc
  * @argv: argv
  */
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	stack_t *head = NULL;
 	FILE *fp;
 	char *buffer = NULL, *copy = NULL;
 	size_t size = 0;
 	unsigned int line = 1;
+	int num = 0;
 
 	if (argc != 2)
 	{
@@ -75,7 +84,20 @@ void main(int argc, char *argv[])
 	{
 		copy = strdup(buffer);
 		copy[strlen(copy) - 1] = '\0';
-		tokenizador(&head, copy, line);
+		num = tokenizador(&head, copy, line);
+		if (num == -1)
+			break;
 		line++;
+		free(copy);
+	}
+	free(buffer);
+	fclose(fp);
+	free_listint(head);
+	if (num != -1)
+		return (0);
+	else
+	{
+		free(copy);
+		exit(EXIT_FAILURE);
 	}
 }

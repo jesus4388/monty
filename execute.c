@@ -4,20 +4,18 @@
  * @number: string
  * Return: yes or no
  */
-char *check_digit(char *number)
+int check_digit(char *number)
 {
-	int i = 0;
-	char *si = "si";
-	char *no = "no";
+	int i = 0;;
 
 	for (i = 0; number[i]; i++)
 	{
 		if (number[0] == '-')
 			i++;
 		if (number[i] < 48 || number[i] > 57)
-			return (no);
+			return (0);
 	}
-	return (si);
+	return (1);
 }
 /**
  * execute - functions
@@ -26,16 +24,15 @@ char *check_digit(char *number)
  * @n: string
  * @line: number of line
  */
-void execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
+int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 {
 	unsigned int num = 0;
-	char *let = NULL;
-	int i = 0;
+	int let = 0;
 
 	if (funcion.f == add_node)
 	{
 		let = check_digit(n);
-		if (let == "si")
+		if (let == 1)
 		{
 			num = atoi(n);
 			add_node(head, num);
@@ -43,9 +40,10 @@ void execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 		else
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
-			exit(EXIT_FAILURE);
+			return(-1);
 		}
 	}
 	if (funcion.f == print_list)
 		print_list(head, line);
+	return(0);
 }

@@ -33,6 +33,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void add_node(stack_t **head, unsigned int n);
-void execute(instruction_t funcion, stack_t **head, char *n, unsigned int line);
+int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line);
 void print_list(stack_t **head, unsigned int line);
+void free_listint(stack_t *head);
 #endif
