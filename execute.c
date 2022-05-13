@@ -10,11 +10,11 @@ int check_digit(char *number)
 
 	if (number == NULL)
 		return (0);
-	for (i = 0; number[i]; i++)
+	if (number[i] == '-')
+		i++;
+	for (i = i; number[i]; i++)
 	{
-		if (number[0] == '-')
-			i++;
-		if (number[i] < 48 || number[i] > 57)
+		if (number[i] < 48 || number[i] > 57 || number[i] == '-')
 			return (0);
 	}
 	return (1);
