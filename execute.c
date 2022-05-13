@@ -1,25 +1,5 @@
 #include "monty.h"
 /**
- * check_digit -  check digit
- * @number: string
- * Return: yes or no
- */
-int check_digit(char *number)
-{
-	int i = 0;
-
-	if (number == NULL)
-		return (0);
-	if (number[i] == '-')
-		i++;
-	for (i = i; number[i]; i++)
-	{
-		if (number[i] < 48 || number[i] > 57 || number[i] == '-')
-			return (0);
-	}
-	return (1);
-}
-/**
  * execute - functions
  * @funcion: pointer to function
  * @head: pointer
@@ -29,24 +9,22 @@ int check_digit(char *number)
  */
 int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 {
-	unsigned int num = 0;
-	int let = 0;
+	int let = 0, nod = 0;
 
 	if (funcion.f == add_node)
 	{
-		let = check_digit(n);
-		if (let == 1)
-		{
-			num = atoi(n);
-			add_node(head, num);
-		}
-		else
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line);
+		let = check_add(head, n, line);
+		if (let == -1)
 			return (-1);
-		}
 	}
 	if (funcion.f == print_list)
 		print_list(head, line);
+	if (funcion.f == print_node)
+	{
+		nod = check_node(head, line);
+		if (nod == -1)
+			return (-1);
+	}
 	return (0);
+
 }

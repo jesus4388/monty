@@ -36,4 +36,8 @@ void add_node(stack_t **head, unsigned int n);
 int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line);
 void print_list(stack_t **head, unsigned int line);
 void free_listint(stack_t *head);
+void print_node(stack_t **head, unsigned int line);
+int check_add(stack_t **head, char *n, unsigned int line);
+int check_digit(char *number);
+int check_node(stack_t **head, unsigned int line);
 #endif

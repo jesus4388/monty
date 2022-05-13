@@ -10,11 +10,10 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 	instruction_t funcion;
 
 	instruction_t selector[] = {
-		{"push", add_node},
-		{"pall", print_list},
+		{"push", add_node}, {"pall", print_list}, {"pint", print_node},
 		{NULL, NULL}
 	};
-	for (i = 0; i < 2; i++)
+	for (i = 0; selector[i].opcode != NULL; i++)
 	{
 		if (strcmp(comand, selector[i].opcode) == 0)
 		{
@@ -40,11 +39,6 @@ int tokenizador(stack_t **head, char *buffer, unsigned int line)
 
 	comand = strtok(buffer, "\n\t ");
 	number = strtok(NULL, "\n\t ");
-	if (comand == NULL)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line, comand);
-		return (-1);
-	}
 	funcion.f = check_function(comand);
 	if (funcion.f)
 	{
