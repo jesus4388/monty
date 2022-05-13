@@ -19,6 +19,13 @@ int check_digit(char *number)
 	}
 	return (1);
 }
+/**
+ * check_add - check function
+ * @head: pointer
+ * @n: number
+ * @line: number line
+ * Return: 0 or -1
+ */
 int check_add(stack_t **head, char *n, unsigned int line)
 {
 	int let = 0, num = 0;
@@ -29,20 +36,26 @@ int check_add(stack_t **head, char *n, unsigned int line)
 		num = atoi(n);
 		add_node(head, num);
 	}
-	else 
+	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line);
 		return (-1);
 	}
 	return (0);
 }
+/**
+ * check_node - check function
+ * @head: pointer
+ * @line: number line
+ * Return: 0 or -1
+ */
 int check_node(stack_t **head, unsigned int line)
 {
 	if (*head != NULL)
 		print_node(head, line);
 	else
 	{
-		fprintf(stderr,"L%d: can't pint, stack empty\n", line );
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		return (-1);
 	}
 	return (0);

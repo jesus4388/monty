@@ -9,6 +9,6 @@ void print_node(stack_t **head, unsigned int line)
 	stack_t *aux = *head;
 	(void) line;
 
-	if(head)
+	if (head)
 		printf("%d\n", aux->n);
 }

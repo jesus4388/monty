@@ -1,6 +1,5 @@
-push 12
+push
 push 1
-pall
 push 3
 push 4
 pint
