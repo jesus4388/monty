@@ -11,17 +11,16 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 {
 
 	if (funcion.f == add_node)
-	{
 		if (check_add(head, n, line) == -1)
 			return (-1);
-	}
 	if (funcion.f == print_list)
 		print_list(head, line);
 	if (funcion.f == print_node)
-	{
 		if (check_node(head, line) == -1)
 			return (-1);
-	}
+	if (funcion.f == remove_node)
+		if (check_pop(head, line) == -1)
+			return (-1);
 	return (0);
 
 }

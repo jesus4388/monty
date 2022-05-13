@@ -60,3 +60,14 @@ int check_node(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+int check_pop(stack_t **head, unsigned int line)
+{
+	if (*head != NULL)
+		remove_node(head, line);
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
+		return (-1);
+	}
+	return (0);
+}

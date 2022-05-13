@@ -40,4 +40,6 @@ void print_node(stack_t **head, unsigned int line);
 int check_add(stack_t **head, char *n, unsigned int line);
 int check_digit(char *number);
 int check_node(stack_t **head, unsigned int line);
+void remove_node(stack_t **head, unsigned int line);
+int check_pop(stack_t **head, unsigned int line);
 #endif
