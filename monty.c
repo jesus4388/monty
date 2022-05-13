@@ -10,8 +10,8 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 	instruction_t funcion;
 
 	instruction_t selector[] = {
-		{"push", add_node}, 
-		{"pall", print_list}, 
+		{"push", add_node},
+		{"pall", print_list},
 		{NULL, NULL}
 	};
 	for (i = 0; i < 2; i++)
@@ -29,6 +29,7 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
  * @head: pointer;
  * @buffer: line
  * @line: number of line
+ * Return: 0 or -1
  */
 int tokenizador(stack_t **head, char *buffer, unsigned int line)
 {
@@ -40,25 +41,26 @@ int tokenizador(stack_t **head, char *buffer, unsigned int line)
 	comand = strtok(buffer, "\n\t ");
 	number = strtok(NULL, "\n\t ");
 	if (comand == NULL)
-		return(0);
+		return (0);
 	funcion.f = check_function(comand);
 	if (funcion.f)
 	{
 		num = execute(funcion, head, number, line);
 		if (num == -1)
-			return(-1);
+			return (-1);
 	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line, comand);
-		return(-1);
+		return (-1);
 	}
-	return(0);
+	return (0);
 }
 /**
  * main - monty
  * @argc: argc
  * @argv: argv
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
@@ -95,9 +97,6 @@ int main(int argc, char *argv[])
 	free_listint(head);
 	if (num != -1)
 		return (0);
-	else
-	{
-		free(copy);
-		exit(EXIT_FAILURE);
-	}
+	free(copy);
+	exit(EXIT_FAILURE);
 }

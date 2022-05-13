@@ -6,7 +6,7 @@
  */
 int check_digit(char *number)
 {
-	int i = 0;;
+	int i = 0;
 
 	for (i = 0; number[i]; i++)
 	{
@@ -23,6 +23,7 @@ int check_digit(char *number)
  * @head: pointer
  * @n: string
  * @line: number of line
+ * Return: 1 or 0
  */
 int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 {
@@ -40,10 +41,10 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 		else
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line);
-			return(-1);
+			return (-1);
 		}
 	}
 	if (funcion.f == print_list)
 		print_list(head, line);
-	return(0);
+	return (0);
 }
