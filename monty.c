@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 	FILE *fp;
 	char *buffer = NULL, *copy = NULL;
 	size_t size = 0;
-	unsigned int line = 1;
+	unsigned int line = 0;
 	int num = 0;
 
 	if (argc != 2)
