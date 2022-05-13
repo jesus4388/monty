@@ -87,13 +87,13 @@ int main(int argc, char *argv[])
 	}
 	while (getline(&buffer, &size, fp) != -1)
 	{
+		line++;
 		copy = strdup(buffer);
 		copy[strlen(copy) - 1] = '\0';
 		if (strlen(copy) > 2)
 			num = tokenizador(&head, copy, line);
 		if (num == -1)
 			break;
-		line++;
 		free(copy);
 	}
 	free(buffer);
