@@ -60,6 +60,12 @@ int check_node(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+/**
+ * check_pop - remove node
+ * @head: pointer
+ * @line: number line
+ * Return: -1 or 0
+ */
 int check_pop(stack_t **head, unsigned int line)
 {
 	if (*head != NULL)
