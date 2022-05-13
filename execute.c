@@ -7,7 +7,9 @@
 int check_digit(char *number)
 {
 	int i = 0;
-
+	
+	if (number == NULL)
+		return (0);
 	for (i = 0; number[i]; i++)
 	{
 		if (number[0] == '-')

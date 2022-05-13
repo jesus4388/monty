@@ -41,7 +41,10 @@ int tokenizador(stack_t **head, char *buffer, unsigned int line)
 	comand = strtok(buffer, "\n\t ");
 	number = strtok(NULL, "\n\t ");
 	if (comand == NULL)
-		return (0);
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line, comand);
+		return (-1);
+	}
 	funcion.f = check_function(comand);
 	if (funcion.f)
 	{
@@ -86,7 +89,8 @@ int main(int argc, char *argv[])
 	{
 		copy = strdup(buffer);
 		copy[strlen(copy) - 1] = '\0';
-		num = tokenizador(&head, copy, line);
+		if (strlen(copy) > 2)
+			num = tokenizador(&head, copy, line);
 		if (num == -1)
 			break;
 		line++;
