@@ -71,8 +71,8 @@ int main(int argc, char *argv[])
 	FILE *fp;
 	char *buffer = NULL, *copy = NULL;
 	size_t size = 0;
-	unsigned int line = 1;
-	int num = 0;
+	unsigned int line = 0;
+	int num = 0, i = 0;
 
 	if (argc != 2)
 	{
@@ -90,8 +90,12 @@ int main(int argc, char *argv[])
 		line++;
 		copy = strdup(buffer);
 		copy[strlen(copy) - 1] = '\0';
-		if (strlen(copy) > 2)
-			num = tokenizador(&head, copy, line);
+		for (i = 0; copy[i]; i++)
+			if (copy[i] != ' ' && copy[i] != '\t' && copy[i] != '\n')
+			{
+				num = tokenizador(&head, copy, line);
+				break;
+			}
 		if (num == -1)
 			break;
 		free(copy);
