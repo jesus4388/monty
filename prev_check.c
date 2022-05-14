@@ -94,6 +94,11 @@ int check_swap(stack_t **head, unsigned int line)
 			aux = aux->next;
 		if (i > 1)
 			swap_node(head, line);
+		else
+		{
+			fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+			return (-1);
+		}
 	}
 	else
 	{
