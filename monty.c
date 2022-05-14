@@ -13,7 +13,7 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 		{"push", add_node}, {"pall", print_list}, {"pint", print_node},
 		{"pop", remove_node}, {"swap", swap_node}, {"add", sum_node},
 		{"nop", nothing}, {"sub", sub_node}, {"div", div_node},
-		{"mod", mod_node}, {"mul", mul_node},
+		{"mod", mod_node}, {"#", coment}, {"mul", mul_node},
 		{NULL, NULL}
 	};
 	for (i = 0; selector[i].opcode != NULL; i++)

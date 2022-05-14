@@ -34,3 +34,13 @@ int check_mod(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+/**
+ * coment - coment
+ * @head: pointer
+ * @line: number of line
+ */
+void coment(stack_t **head, unsigned int line)
+{
+	(void) *head;
+	(void) line;
+}
