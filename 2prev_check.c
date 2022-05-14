@@ -93,13 +93,13 @@ int check_div(stack_t **head, unsigned int line)
 			div_node(head, line);
 		else
 		{
-			fprintf(stderr, "L%d: can't div, stack too short", line);
+			fprintf(stderr, "L%d: can't div, stack too short\n", line);
 			return (-1);
 		}
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't div, stack too short", line);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line);
 		return (-1);
 	}
 	return (0);
