@@ -37,5 +37,8 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 	if (funcion.f == mul_node)
 		if (check_mul(head, line) == -1)
 			return (-1);
+	if (funcion.f == mod_node)
+		if (check_mod(head, line) == -1)
+			return (-1);
 	return (0);
 }

@@ -53,4 +53,6 @@ void div_node(stack_t **head, unsigned int line);
 int check_div(stack_t **head, unsigned int line);
 void mul_node(stack_t **head, unsigned int line);
 int check_mul(stack_t **head, unsigned int line);
+void mod_node(stack_t **head, unsigned int line);
+int check_mod(stack_t **head, unsigned int line);
 #endif
