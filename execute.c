@@ -9,7 +9,6 @@
  */
 int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 {
-
 	if (funcion.f == add_node)
 		if (check_add(head, n, line) == -1)
 			return (-1);
@@ -35,6 +34,8 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 	if (funcion.f == div_node)
 		if (check_div(head, line) == -1)
 			return (-1);
+	if (funcion.f == mul_node)
+		if (check_mul(head, line) == -1)
+			return (-1);
 	return (0);
-
 }
