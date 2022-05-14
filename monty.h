@@ -44,4 +44,6 @@ void remove_node(stack_t **head, unsigned int line);
 int check_pop(stack_t **head, unsigned int line);
 void swap_node(stack_t **head, unsigned int line);
 int check_swap(stack_t **head, unsigned int line);
+void sum_node(stack_t **head, unsigned int line);
+int check_sum(stack_t **head, unsigned int line);
 #endif

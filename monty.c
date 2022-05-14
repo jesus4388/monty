@@ -11,7 +11,8 @@ void (*check_function(char *comand))(stack_t **head, unsigned int line)
 
 	instruction_t selector[] = {
 		{"push", add_node}, {"pall", print_list}, {"pint", print_node},
-		{"pop", remove_node}, {"swap", swap_node}, {NULL, NULL}
+		{"pop", remove_node}, {"swap", swap_node}, {"add", sum_node},
+		{NULL, NULL}
 	};
 	for (i = 0; selector[i].opcode != NULL; i++)
 	{
