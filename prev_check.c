@@ -92,7 +92,7 @@ int check_swap(stack_t **head, unsigned int line)
 	{
 		for (i = 0; aux != NULL; i++)
 			aux = aux->next;
-		if (i > 2)
+		if (i > 1)
 			swap_node(head, line);
 	}
 	else
