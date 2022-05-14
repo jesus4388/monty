@@ -21,6 +21,9 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 	if (funcion.f == remove_node)
 		if (check_pop(head, line) == -1)
 			return (-1);
+	if (funcion.f == swap_node)
+		if (check_swap(head, line) == -1)
+			return (-1);
 	return (0);
 
 }

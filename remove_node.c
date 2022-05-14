@@ -1,7 +1,8 @@
 #include "monty.h"
 /**
- * remove - pop
+ * remove_node - pop
  * @head: pointer
+ * @line: number of line
  */
 void remove_node(stack_t **head, unsigned int line)
 {
@@ -11,6 +12,6 @@ void remove_node(stack_t **head, unsigned int line)
 	if (*head)
 	{
 		*head = (*head)->next;
-		free (aux);
+		free(aux);
 	}
 }

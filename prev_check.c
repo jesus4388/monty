@@ -77,3 +77,28 @@ int check_pop(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+/**
+ * check_swap - funcion swap
+ * @head: pointer
+ * @line: number line
+ * Return: -1 or 0
+ */
+int check_swap(stack_t **head, unsigned int line)
+{
+	stack_t *aux = *head;
+	int i = 0;
+
+	if (*head != NULL)
+	{
+		for (i = 0; aux != NULL; i++)
+			aux = aux->next;
+		if (i > 2)
+			swap_node(head, line);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
+		return (-1);
+	}
+	return (0);
+}
