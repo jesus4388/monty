@@ -49,4 +49,6 @@ int check_sum(stack_t **head, unsigned int line);
 void nothing(stack_t **head, unsigned int line);
 void sub_node(stack_t **head, unsigned int line);
 int check_sub(stack_t **head, unsigned int line);
+void div_node(stack_t **head, unsigned int line);
+int check_div(stack_t **head, unsigned int line);
 #endif
