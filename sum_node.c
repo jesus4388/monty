@@ -6,6 +6,10 @@
  */
 void sum_node(stack_t **head, unsigned int line)
 {
-	(*head)->next->n = (*head)->n + (*head)->next->n;
+	stack_t *aux = *head;
+
+	aux->next->n = aux->n + aux->next->n;
+	aux = aux->next;
 	remove_node(head, line);
+	*head = aux;
 }
