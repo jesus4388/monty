@@ -47,4 +47,6 @@ int check_swap(stack_t **head, unsigned int line);
 void sum_node(stack_t **head, unsigned int line);
 int check_sum(stack_t **head, unsigned int line);
 void nothing(stack_t **head, unsigned int line);
+void sub_node(stack_t **head, unsigned int line);
+int check_sub(stack_t **head, unsigned int line);
 #endif

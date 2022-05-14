@@ -29,6 +29,9 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 			return (-1);
 	if (funcion.f == nothing)
 		nothing(head, line);
+	if (funcion.f == sub_node)
+		if (check_sub(head, line) == -1)
+			return (-1);
 	return (0);
 
 }
