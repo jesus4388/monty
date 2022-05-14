@@ -43,7 +43,7 @@ void nothing(stack_t **head, unsigned int line)
  * check_sub - check sub
  * @head: pointer
  * @line: number of line
- * Return: 0
+ * Return: 0 or 1
  */
 int check_sub(stack_t **head, unsigned int line)
 {
