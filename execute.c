@@ -27,6 +27,8 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 	if (funcion.f == sum_node)
 		if (check_sum(head, line) == -1)
 			return (-1);
+	if (funcion.f == nothing)
+		nothing(head, line);
 	return (0);
 
 }

@@ -31,3 +31,13 @@ int check_sum(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+/**
+ * nothing - nothing
+ * @head: pointer
+ * @line: number of line
+ */
+void nothing(stack_t **head, unsigned int line)
+{
+	(void) *head;
+	(void) line;
+}
