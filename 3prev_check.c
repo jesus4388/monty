@@ -35,7 +35,7 @@ int check_mod(stack_t **head, unsigned int line)
 	return (0);
 }
 /**
- * coment - coment
+ * check_pchar - check pchar
  * @head: pointer
  * @line: number of line
  * Return: 0 or -1
@@ -47,7 +47,7 @@ int check_pchar(stack_t **head, unsigned int line)
 			print_char(head, line);
 		else
 		{
-			fprintf (stderr, "L%d: can't pchar, value out of range\n", line);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 			return (-1);
 		}
 	else
