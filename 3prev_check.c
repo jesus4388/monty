@@ -39,8 +39,3 @@ int check_mod(stack_t **head, unsigned int line)
  * @head: pointer
  * @line: number of line
  */
-void coment(stack_t **head, unsigned int line)
-{
-	(void) *head;
-	(void) line;
-}

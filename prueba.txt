@@ -1,5 +1,7 @@
+# cometario
 push 1
 push 2
+# comentario
 push 10
 mod
 pall
