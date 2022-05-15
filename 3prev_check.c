@@ -43,7 +43,7 @@ int check_mod(stack_t **head, unsigned int line)
 int check_pchar(stack_t **head, unsigned int line)
 {
 	if (*head != NULL)
-		if ((*head)->n >= 0 && (*head)->n <= 126)
+		if ((*head)->n >= 32 && (*head)->n <= 126)
 			print_char(head, line);
 		else
 		{
