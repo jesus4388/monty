@@ -1,7 +1,11 @@
-# cometario
 push 1
 push 2
-# comentario
-push 10
-mod
+pall
+push 12
+push 5
+pop
+pint
+pall
+push 
+pint
 pall

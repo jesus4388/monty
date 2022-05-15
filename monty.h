@@ -56,4 +56,6 @@ int check_mul(stack_t **head, unsigned int line);
 void mod_node(stack_t **head, unsigned int line);
 int check_mod(stack_t **head, unsigned int line);
 void coment(stack_t **head, unsigned int line);
+void print_char(stack_t **head, unsigned int line);
+int check_pchar(stack_t **head, unsigned int line);
 #endif
