@@ -43,5 +43,7 @@ int execute(instruction_t funcion, stack_t **head, char *n, unsigned int line)
 	if (funcion.f == print_char)
 		if (check_pchar(head, line) == -1)
 			return (-1);
+	if (funcion.f == all_char)
+		all_char(head, line);
 	return (0);
 }

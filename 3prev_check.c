@@ -57,3 +57,32 @@ int check_pchar(stack_t **head, unsigned int line)
 	}
 	return (0);
 }
+/**
+ * all_char - print char
+ * @head: pointer
+ * @line: number of line
+ */
+void all_char(stack_t **head, unsigned int line)
+{
+	stack_t *aux = *head;
+	(void) line;
+
+	if (*head != NULL)
+	{
+		while (aux != NULL)
+		{
+			if (aux->n == 0)
+				break;
+			if (aux->n >= 32 && aux->n <= 126)
+			{
+				printf("%c", aux->n);
+				aux = aux->next;
+			}
+			else
+				break;
+		}
+		printf("\n");
+	}
+	else
+		printf("\n");
+}
