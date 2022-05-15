@@ -47,7 +47,7 @@ int check_pchar(stack_t **head, unsigned int line)
 			print_char(head, line);
 		else
 		{
-			fprintf (stderr, "L%d: can't pchar, stack empty\n", line);
+			fprintf (stderr, "L%d: can't pchar, value out of range\n", line);
 			return (-1);
 		}
 	else
