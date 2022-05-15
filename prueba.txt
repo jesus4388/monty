@@ -1,11 +1,6 @@
+#comentario
 push 1
-push 2
-pall
-push 12
-push 5
-pop
-pint
-pall
-push 
-pint
+push 3
+push 3
+pchar
 pall

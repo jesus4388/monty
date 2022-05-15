@@ -38,4 +38,22 @@ int check_mod(stack_t **head, unsigned int line)
  * coment - coment
  * @head: pointer
  * @line: number of line
+ * Return: 0 or -1
  */
+int check_pchar(stack_t **head, unsigned int line)
+{
+	if (*head != NULL)
+		if ((*head)->n >= 0 && (*head)->n <= 126)
+			print_char(head, line);
+		else
+		{
+			fprintf (stderr, "L%d: can't pchar, stack empty", line);
+			return (-1);
+		}
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty", line);
+		return (-1);
+	}
+	return (0);
+}
